@@ -1,0 +1,103 @@
+{
+  "categories": [
+    {
+      "name": "Cafetaria",
+      "items": [
+        { "name": "Café (expresso)", "price": 0.9 },
+        { "name": "Café Duplo", "price": 1.6 },
+        { "name": "Pingo Direto", "price": 1.0 },
+        { "name": "Pingo Normal", "price": 0.9 },
+        { "name": "Abatanado", "price": 1.0 },
+        { "name": "Meia de leite", "price": 1.2 },
+        { "name": "Galão", "price": 1.3 },
+        { "name": "Cappuccino", "price": 1.3 },
+        { "name": "Leite achocolatado", "price": 1.5 },
+        { "name": "Cevada", "price": 0.85 },
+        { "name": "Cevada com leite", "price": 1.2 },
+        {
+          "name": "Chá (camomila, verde, frutos vermelhos)",
+          "price": 1.0
+        },
+        { "name": "Carioca de café ou limão", "price": 0.8 },
+        { "name": "Carioca duplo de café ou limão", "price": 1.25 },
+        { "name": "Copo de leite", "price": 0.95 }
+      ]
+    },
+    {
+      "name": "Padaria & Pastelaria",
+      "items": [
+        { "name": "Pastel de nata", "price": 1.4 },
+        { "name": "Pão Bijou", "price": 0.17 },
+        { "name": "Pão Bijou com manteiga", "price": 0.6 },
+        { "name": "Pão Bijou com manteiga torrado", "price": 0.7 },
+        { "name": "Pão de sementes", "price": 0.38 },
+        { "name": "Pão de sementes com manteiga", "price": 0.8 },
+        { "name": "Pão de sementes com manteiga torrado", "price": 0.9 },
+        { "name": "Pão D'água", "price": 0.38 },
+        { "name": "Pão D'água com manteiga", "price": 0.8 },
+        { "name": "Pão D'água com manteiga torrado", "price": 0.9 },
+        { "name": "Croissant simples", "price": 1.2 },
+        { "name": "Croissant com manteiga", "price": 1.6 },
+        { "name": "Croissant com queijo ou fiambre", "price": 2.4 },
+        { "name": "Croissant misto", "price": 2.8 },
+        { "name": "Fatia de bolo simples", "price": 1.5 },
+        { "name": "Fatia de bolo especial", "price": 2.5 }
+      ]
+    },
+    {
+      "name": "Lanches",
+      "items": [
+        { "name": "Tosta mista (pão de forma)", "price": 2.4 },
+        { "name": "Tosta mista (pão de chapata)", "price": 3.2 },
+        { "name": "Sandes", "price": 2.5 },
+        { "name": "Meia Torrada", "price": 1.5 },
+        { "name": "Torrada", "price": 2.2 },
+        { "name": "Torrada e compota", "price": 2.5 },
+        { "name": "Coxinha", "price": 2.0 },
+        { "name": "Lanche Misto", "price": 2.0 }
+      ]
+    },
+    {
+      "name": "Bebidas Frias",
+      "items": [
+        { "name": "Sumo de laranja natural", "price": 3.0 },
+        { "name": "Refrigerantes", "price": 1.7 },
+        { "name": "Compa", "price": 1.7 },
+        { "name": "Sumol", "price": 1.6 },
+        { "name": "Frize", "price": 1.6 },
+        { "name": "Agua 0.5", "price": 1.0 },
+        { "name": "Água das pedras", "price": 1.2 },
+        { "name": "Água das pedras sabores", "price": 1.5 },
+        { "name": "Super bock grande", "price": 1.5 },
+        { "name": "Super bock mini", "price": 1.2 },
+        { "name": "Super bock sem álcool", "price": 1.5 },
+        { "name": "Martini/Favaios (Dose)", "price": 0.6 },
+        { "name": "Groselha (Dose)", "price": 0.2 },
+        { "name": "Traçado", "price": 1.8 }
+      ]
+    },
+    {
+      "name": "Menus",
+      "items": [
+        { "name": "Menu Clássico — Café + Pastel de nata", "price": 2.0 },
+        {
+          "name": "Menu Pequeno-almoço — Meia de leite + Pão com manteiga",
+          "price": 1.5
+        },
+        { "name": "Menu Lanche — Tosta mista + Meia de leite", "price": 4.0 },
+        { "name": "Menu Doce — Fatia de bolo + Café", "price": 2.5 },
+        { "name": "Menu Salgado — Coxinha + Refrigerante", "price": 3.5 },
+        { "name": "Menu Torrada — Torrada + Bebida quente", "price": 3.0 },
+        { "name": "Menu Sopa — Sopa + Pão", "price": 2.0 }
+      ]
+    },
+    {
+      "name": "Extra",
+      "items": [
+        { "name": "Sopa + Pão", "price": 2.0 },
+        { "name": "Tartelete", "price": 2.0 },
+        { "name": "Fatia de Tarte de maçã", "price": 2.0 }
+      ]
+    }
+  ]
+}
