@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { HeroParallaxImage } from "@/components/HeroParallaxImage";
 
 const highlights = [
   { icon: "☕", text: "Café a partir de €0.90" },
@@ -23,49 +24,55 @@ export default function HomePage() {
         <div className="absolute -right-40 -top-40 h-[560px] w-[560px] rounded-full bg-amber-700/20 blur-[130px]" />
         <div className="absolute -bottom-40 -left-40 h-[480px] w-[480px] rounded-full bg-amber-500/10 blur-[110px]" />
 
-        <div className="relative mx-auto max-w-5xl px-4 py-28 sm:px-6 sm:py-40">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.35em] text-amber-400">
-            ✦ &nbsp; Guimarães, Portugal
-          </p>
-          <h1 className="mt-5 font-serif text-6xl font-bold leading-[1.08] text-white sm:text-7xl lg:text-8xl">
-            Amora
-            <br />
-            <span className="text-amber-300">Café</span>
-          </h1>
-          <p className="mt-6 max-w-md text-base leading-relaxed text-amber-100/70 sm:text-lg">
-            Café artesanal, pastelaria fresca e pequenos-almoços acolhedores no
-            coração de Guimarães.
-          </p>
-          <div className="mt-10 flex flex-wrap items-center gap-4">
-            <Link
-              href="/menu"
-              className="inline-flex items-center gap-2.5 rounded-full bg-amber-400 px-8 py-4 text-sm font-bold text-stone-900 shadow-xl shadow-amber-900/30 transition-all duration-200 hover:scale-105 hover:bg-amber-300"
-            >
-              Ver Menu completo
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="15"
-                height="15"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden="true"
+        <div className="relative mx-auto flex max-w-5xl items-center gap-8 px-4 py-28 sm:px-6 sm:py-36">
+          {/* Left: text */}
+          <div className="flex-1">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.35em] text-amber-400">
+              ✦ &nbsp; Guimarães, Portugal
+            </p>
+            <h1 className="mt-5 font-serif text-6xl font-bold leading-[1.08] text-white sm:text-7xl lg:text-8xl">
+              Amora
+              <br />
+              <span className="text-amber-300">Café</span>
+            </h1>
+            <p className="mt-6 max-w-md text-base leading-relaxed text-amber-100/70 sm:text-lg">
+              Café artesanal, pastelaria fresca e pequenos-almoços acolhedores no
+              coração de Guimarães.
+            </p>
+            <div className="mt-10 flex flex-wrap items-center gap-4">
+              <Link
+                href="/menu"
+                className="inline-flex items-center gap-2.5 rounded-full bg-amber-400 px-8 py-4 text-sm font-bold text-stone-900 shadow-xl shadow-amber-900/30 transition-all duration-200 hover:scale-105 hover:bg-amber-300"
               >
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-            </Link>
-            <a
-              href="https://wa.me/351910000000"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-7 py-4 text-sm font-semibold text-white backdrop-blur-sm transition hover:bg-white/10"
-            >
-              Fazer pedido
-            </a>
+                Ver Menu completo
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="15"
+                  height="15"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </Link>
+              <a
+                href="https://wa.me/351910000000"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-7 py-4 text-sm font-semibold text-white backdrop-blur-sm transition hover:bg-white/10"
+              >
+                Fazer pedido
+              </a>
+            </div>
           </div>
+
+          {/* Right: parallax pastel de nata */}
+          <HeroParallaxImage />
         </div>
       </section>
 

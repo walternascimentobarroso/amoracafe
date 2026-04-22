@@ -8,7 +8,7 @@ const links = [
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-30 border-b border-amber-100/70 bg-white/85 backdrop-blur-xl dark:border-white/8 dark:bg-zinc-950/85">
+    <header className="sticky top-0 z-30 border-b border-amber-100/70 bg-white/90 backdrop-blur-xl transition-colors duration-300 hover:border-amber-100/40 hover:bg-white/35 dark:border-white/8 dark:bg-zinc-950/90 dark:hover:border-white/10 dark:hover:bg-zinc-950/35">
       <nav className="mx-auto flex max-w-5xl items-center justify-between px-4 py-3.5 sm:px-6">
         {/* Logo */}
         <Link href="/" className="group flex items-center gap-2.5">
