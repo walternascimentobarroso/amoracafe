@@ -3,13 +3,13 @@ import Link from "next/link";
 const highlights = [
   { icon: "☕", text: "Café a partir de €0.90" },
   { icon: "🥐", text: "Pastel de nata fresco todos os dias" },
-  { icon: "📍", text: "Em frente à estação rodoviária" }
+  { icon: "📍", text: "Em frente à estação de comboios Guimarães" }
 ];
 
 const openingHours = [
-  { day: "Segunda a Sexta", time: "07:30 – 19:30" },
-  { day: "Sábado", time: "08:00 – 18:00" },
-  { day: "Domingo", time: "08:00 – 13:00" }
+  { day: "Segunda a Sexta", time: "07:00 – 19:00" },
+  { day: "Sábado", time: "08:00 – 20:00" },
+  { day: "Domingo", time: "Fechado" }
 ];
 
 export default function HomePage() {
@@ -150,7 +150,7 @@ export default function HomePage() {
         <article className="section-card overflow-hidden p-2">
           <iframe
             title="Localização Amora Café"
-            src="https://www.google.com/maps?q=Guimar%C3%A3es%20Esta%C3%A7%C3%A3o%20Rodovi%C3%A1ria&output=embed"
+            src="https://www.google.com/maps?q=41.4356749,-8.2949616&z=17&output=embed"
             loading="lazy"
             className="h-full min-h-72 w-full rounded-xl border-0"
             referrerPolicy="no-referrer-when-downgrade"
