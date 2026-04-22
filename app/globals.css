@@ -11,9 +11,17 @@ html.dark {
 }
 
 body {
-  @apply min-h-screen bg-gradient-to-br from-amber-50 via-orange-50/40 to-rose-50/60 text-zinc-900 antialiased transition-colors duration-300 dark:from-zinc-950 dark:via-zinc-900 dark:to-zinc-950 dark:text-zinc-100;
+  @apply min-h-screen bg-cream font-sans text-espresso antialiased transition-colors duration-300 dark:bg-zinc-950 dark:text-zinc-100;
 }
 
 .glass-card {
-  @apply rounded-2xl border border-white/40 bg-white/45 shadow-lg shadow-zinc-800/5 backdrop-blur-xl dark:border-white/15 dark:bg-zinc-900/35 dark:shadow-black/20;
+  @apply rounded-2xl border border-white/60 bg-white/70 shadow-sm shadow-amber-900/5 backdrop-blur-xl dark:border-white/10 dark:bg-zinc-900/50 dark:shadow-black/20;
+}
+
+.menu-card {
+  @apply rounded-2xl border border-amber-100/80 bg-white shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-amber-200 hover:shadow-lg dark:border-zinc-800 dark:bg-zinc-900/80 dark:hover:border-zinc-700;
+}
+
+.section-card {
+  @apply rounded-2xl border border-amber-100 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-900;
 }

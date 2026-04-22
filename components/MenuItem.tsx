@@ -10,17 +10,19 @@ function formatPrice(price: number): string {
 
 export function MenuItem({ name, price, description }: MenuItemProps) {
   return (
-    <article className="glass-card rounded-xl p-4 transition hover:-translate-y-0.5 hover:shadow-xl">
-      <div className="flex items-start justify-between gap-4">
-        <div>
-          <h3 className="text-base font-semibold text-zinc-900 dark:text-zinc-100">{name}</h3>
-          {description ? (
-            <p className="mt-1 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
-              {description}
-            </p>
-          ) : null}
-        </div>
-        <p className="shrink-0 text-2xl font-extrabold text-coffee dark:text-amber-200">
+    <article className="menu-card group flex items-start justify-between gap-4 p-5">
+      <div className="min-w-0 flex-1">
+        <h3 className="text-[15px] font-semibold leading-snug text-zinc-900 dark:text-zinc-100">
+          {name}
+        </h3>
+        {description ? (
+          <p className="mt-1 text-sm leading-relaxed text-zinc-500 dark:text-zinc-400">
+            {description}
+          </p>
+        ) : null}
+      </div>
+      <div className="shrink-0 rounded-xl bg-amber-50 px-3 py-1.5 ring-1 ring-amber-100 dark:bg-amber-900/15 dark:ring-amber-900/30">
+        <p className="text-xl font-extrabold tabular-nums text-coffee dark:text-amber-400">
           {formatPrice(price)}
         </p>
       </div>

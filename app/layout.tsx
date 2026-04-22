@@ -1,7 +1,20 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import { Playfair_Display, Inter } from "next/font/google";
 import { SiteHeader } from "@/components/SiteHeader";
 import "./globals.css";
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair",
+  display: "swap"
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap"
+});
 
 export const metadata: Metadata = {
   title: "Amora Café",
@@ -14,7 +27,11 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="pt" suppressHydrationWarning>
+    <html
+      lang="pt"
+      suppressHydrationWarning
+      className={`${playfair.variable} ${inter.variable}`}
+    >
       <head>
         <script
           dangerouslySetInnerHTML={{

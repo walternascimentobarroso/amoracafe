@@ -9,9 +9,17 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        cream: "#fbf7f2",
+        cream: "#fdf8f0",
+        parchment: "#f5ede0",
         coffee: "#6f4e37",
-        mocha: "#8b5e3c"
+        mocha: "#8b5e3c",
+        espresso: "#2d1a0e",
+        gold: "#c8860a",
+        caramel: "#d4956a"
+      },
+      fontFamily: {
+        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+        serif: ["var(--font-playfair)", "Georgia", "serif"]
       }
     }
   },
