@@ -1,0 +1,23 @@
+{
+  "colors": {
+    "brand": {
+      "cream": "#fdf8f0",
+      "parchment": "#f5ede0",
+      "coffee": "#6f4e37",
+      "mocha": "#8b5e3c",
+      "espresso": "#2d1a0e",
+      "gold": "#c8860a",
+      "caramel": "#d4956a"
+    },
+    "hero": {
+      "deepShadow": "#110500"
+    }
+  },
+  "radii": {
+    "card": "1rem",
+    "pill": "9999px"
+  },
+  "iconSizes": {
+    "highlight": 30
+  }
+}

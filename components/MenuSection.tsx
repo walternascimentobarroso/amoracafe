@@ -7,36 +7,28 @@ interface MenuCategoryItem {
 }
 
 interface MenuSectionProps {
+  id: string;
+  emoji: string;
   name: string;
+  description: string;
   items: MenuCategoryItem[];
 }
 
-const categoryConfig: Record<string, { emoji: string; description: string }> = {
-  "Cafetaria": { emoji: "☕", description: "Bebidas quentes artesanais" },
-  "Padaria & Pastelaria": { emoji: "🥐", description: "Frescos todos os dias" },
-  "Lanches": { emoji: "🥪", description: "Para qualquer hora do dia" },
-  "Bebidas Frias": { emoji: "🥤", description: "Sumos e refrigerantes" },
-  "Menus": { emoji: "⭐", description: "Combinações com valor" },
-  "Extra": { emoji: "✨", description: "Opções especiais" }
-};
-
-export function MenuSection({ name, items }: MenuSectionProps) {
-  const config = categoryConfig[name] ?? { emoji: "🍽️", description: "" };
-
+export function MenuSection({ id, emoji, name, description, items }: MenuSectionProps) {
   return (
-    <section aria-label={name}>
+    <section aria-label={name} id={id}>
       {/* Section heading */}
       <div className="mb-6 flex items-center gap-4">
         <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-amber-50 text-xl shadow-sm dark:bg-amber-900/20">
-          <span aria-hidden="true">{config.emoji}</span>
+          <span aria-hidden="true">{emoji}</span>
         </div>
         <div>
           <h2 className="font-serif text-2xl font-bold text-zinc-900 dark:text-zinc-50">
             {name}
           </h2>
-          {config.description ? (
+          {description ? (
             <p className="text-xs text-zinc-400 dark:text-zinc-500">
-              {config.description}
+              {description}
             </p>
           ) : null}
         </div>

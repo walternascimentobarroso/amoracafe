@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useI18n } from "@/components/I18nProvider";
 
 type Theme = "light" | "dark";
 
@@ -13,6 +14,7 @@ function applyTheme(theme: Theme): void {
 
 export function ThemeToggle() {
   const [theme, setTheme] = useState<Theme>("light");
+  const { copy } = useI18n();
 
   useEffect(() => {
     const savedTheme = localStorage.getItem(storageKey);
@@ -40,8 +42,8 @@ export function ThemeToggle() {
       type="button"
       onClick={toggleTheme}
       className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/30 bg-white/15 text-zinc-700 shadow-sm backdrop-blur-md transition hover:bg-white/30 dark:border-white/20 dark:bg-zinc-900/40 dark:text-zinc-100 dark:hover:bg-zinc-800/60"
-      aria-label={theme === "light" ? "Ativar dark mode" : "Ativar white mode"}
-      title={theme === "light" ? "Ativar dark mode" : "Ativar white mode"}
+      aria-label={theme === "light" ? copy.theme.toggleToDark : copy.theme.toggleToLight}
+      title={theme === "light" ? copy.theme.toggleToDark : copy.theme.toggleToLight}
     >
       {theme === "light" ? (
         <svg

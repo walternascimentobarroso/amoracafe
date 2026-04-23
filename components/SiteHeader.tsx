@@ -1,12 +1,18 @@
+"use client";
+
 import Link from "next/link";
+import { LanguageSelect } from "@/components/LanguageSelect";
+import { useI18n } from "@/components/I18nProvider";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
-const links = [
-  { href: "/", label: "Início" },
-  { href: "/menu", label: "Menu" }
-];
-
 export function SiteHeader() {
+  const { copy } = useI18n();
+
+  const links = [
+    { href: "/", label: copy.header.home },
+    { href: "/menu", label: copy.header.menu }
+  ];
+
   return (
     <header className="sticky top-0 z-30 border-b border-amber-100/70 bg-white/90 backdrop-blur-xl transition-colors duration-300 hover:border-amber-100/40 hover:bg-white/35 dark:border-white/8 dark:bg-zinc-950/90 dark:hover:border-white/10 dark:hover:bg-zinc-950/35">
       <nav className="mx-auto flex max-w-5xl items-center justify-between px-4 py-3.5 sm:px-6">
@@ -37,6 +43,7 @@ export function SiteHeader() {
               </li>
             ))}
           </ul>
+          <LanguageSelect />
           <ThemeToggle />
         </div>
       </nav>

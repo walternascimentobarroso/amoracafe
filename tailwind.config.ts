@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import designSystem from "./config/design-system.json";
 
 const config: Config = {
   darkMode: "class",
@@ -9,13 +10,13 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        cream: "#fdf8f0",
-        parchment: "#f5ede0",
-        coffee: "#6f4e37",
-        mocha: "#8b5e3c",
-        espresso: "#2d1a0e",
-        gold: "#c8860a",
-        caramel: "#d4956a"
+        cream: designSystem.colors.brand.cream,
+        parchment: designSystem.colors.brand.parchment,
+        coffee: designSystem.colors.brand.coffee,
+        mocha: designSystem.colors.brand.mocha,
+        espresso: designSystem.colors.brand.espresso,
+        gold: designSystem.colors.brand.gold,
+        caramel: designSystem.colors.brand.caramel
       },
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],

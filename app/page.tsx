@@ -1,25 +1,33 @@
+"use client";
+
 import Link from "next/link";
+import Image from "next/image";
+import { useI18n } from "@/components/I18nProvider";
 import { HeroParallaxImage } from "@/components/HeroParallaxImage";
+import designSystem from "@/config/design-system.json";
 
-const highlights = [
-  { icon: "☕", text: "Café a partir de €0.90" },
-  { icon: "🥐", text: "Pastel de nata fresco todos os dias" },
-  { icon: "📍", text: "Em frente à estação de comboios Guimarães" }
-];
-
-const openingHours = [
-  { day: "Segunda a Sexta", time: "07:00 – 19:00" },
-  { day: "Sábado", time: "08:00 – 20:00" },
-  { day: "Domingo", time: "Fechado" }
-];
+const heroGradientStyle = {
+  backgroundImage: `linear-gradient(to bottom right, ${designSystem.colors.hero.deepShadow}, ${designSystem.colors.brand.espresso}, ${designSystem.colors.brand.mocha})`
+};
 
 export default function HomePage() {
+  const { copy } = useI18n();
+  const highlights = [
+    { icon: "☕", text: copy.home.highlights.coffeePrice },
+    {
+      iconImage: "/images/icon-nata.png",
+      iconAlt: copy.home.highlights.nataIconAlt,
+      text: copy.home.highlights.nataFresh
+    },
+    { icon: "📍", text: copy.home.highlights.nearStation }
+  ];
+
   return (
     <main>
       {/* ── Hero ── */}
       <section className="relative overflow-hidden bg-espresso">
         {/* Deep coffee gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#110500] via-espresso to-mocha" />
+        <div className="absolute inset-0" style={heroGradientStyle} />
         {/* Warm glow orbs */}
         <div className="absolute -right-40 -top-40 h-[560px] w-[560px] rounded-full bg-amber-700/20 blur-[130px]" />
         <div className="absolute -bottom-40 -left-40 h-[480px] w-[480px] rounded-full bg-amber-500/10 blur-[110px]" />
@@ -28,7 +36,7 @@ export default function HomePage() {
           {/* Left: text */}
           <div className="flex-1">
             <p className="text-[11px] font-semibold uppercase tracking-[0.35em] text-amber-400">
-              ✦ &nbsp; Guimarães, Portugal
+              ✦ &nbsp; {copy.home.location}
             </p>
             <h1 className="mt-5 font-serif text-6xl font-bold leading-[1.08] text-white sm:text-7xl lg:text-8xl">
               Amora
@@ -36,15 +44,14 @@ export default function HomePage() {
               <span className="text-amber-300">Café</span>
             </h1>
             <p className="mt-6 max-w-md text-base leading-relaxed text-amber-100/70 sm:text-lg">
-              Café artesanal, pastelaria fresca e pequenos-almoços acolhedores no
-              coração de Guimarães.
+              {copy.home.heroDescription}
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-4">
               <Link
                 href="/menu"
                 className="inline-flex items-center gap-2.5 rounded-full bg-amber-400 px-8 py-4 text-sm font-bold text-stone-900 shadow-xl shadow-amber-900/30 transition-all duration-200 hover:scale-105 hover:bg-amber-300"
               >
-                Ver Menu completo
+                {copy.home.menuButton}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="15"
@@ -60,14 +67,6 @@ export default function HomePage() {
                   <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
               </Link>
-              <a
-                href="https://wa.me/351910000000"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-7 py-4 text-sm font-semibold text-white backdrop-blur-sm transition hover:bg-white/10"
-              >
-                Fazer pedido
-              </a>
             </div>
           </div>
 
@@ -88,7 +87,17 @@ export default function HomePage() {
                 className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-amber-50 text-xl dark:bg-amber-900/20"
                 aria-hidden="true"
               >
-                {h.icon}
+                {h.iconImage ? (
+                  <Image
+                    src={h.iconImage}
+                    alt={h.iconAlt ?? ""}
+                    width={designSystem.iconSizes.highlight}
+                    height={designSystem.iconSizes.highlight}
+                    className="object-contain"
+                  />
+                ) : (
+                  h.icon
+                )}
               </span>
               <p className="text-sm font-semibold text-zinc-800 dark:text-zinc-200">
                 {h.text}
@@ -124,11 +133,11 @@ export default function HomePage() {
               </svg>
             </div>
             <h2 className="font-serif text-xl font-bold text-zinc-900 dark:text-zinc-50">
-              Horário
+              {copy.home.openingHoursTitle}
             </h2>
           </div>
           <ul className="space-y-3">
-            {openingHours.map((entry) => (
+            {copy.home.openingHours.map((entry) => (
               <li
                 key={entry.day}
                 className="flex items-center justify-between gap-3 text-sm"
@@ -143,20 +152,15 @@ export default function HomePage() {
             ))}
           </ul>
           <div className="my-6 h-px bg-gradient-to-r from-amber-100 via-amber-50 to-transparent dark:from-zinc-700 dark:via-zinc-800" />
-          <a
-            href="https://wa.me/351910000000"
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-full bg-coffee px-6 py-3 text-sm font-semibold text-white transition hover:bg-mocha dark:bg-amber-500 dark:text-stone-900 dark:hover:bg-amber-400"
-          >
-            Fazer pedido →
-          </a>
+          <p className="text-sm font-medium text-zinc-600 dark:text-zinc-300">
+            {copy.home.localOrdersOnly}
+          </p>
         </article>
 
         {/* Map */}
         <article className="section-card overflow-hidden p-2">
           <iframe
-            title="Localização Amora Café"
+            title={copy.home.mapTitle}
             src="https://www.google.com/maps?q=41.4356749,-8.2949616&z=17&output=embed"
             loading="lazy"
             className="h-full min-h-72 w-full rounded-xl border-0"

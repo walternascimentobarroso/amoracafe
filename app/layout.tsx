@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Playfair_Display, Inter } from "next/font/google";
+import { I18nProvider } from "@/components/I18nProvider";
 import { SiteHeader } from "@/components/SiteHeader";
 import "./globals.css";
 
@@ -46,10 +47,27 @@ export default function RootLayout({ children }: RootLayoutProps) {
             `
           }}
         />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                var key = "amoracafe-language";
+                var savedLanguage = localStorage.getItem(key);
+                var browserLanguage = navigator.language.toLowerCase();
+                var initialLanguage = savedLanguage === "pt" || savedLanguage === "en"
+                  ? savedLanguage
+                  : (browserLanguage.indexOf("pt") === 0 ? "pt" : "en");
+                document.documentElement.lang = initialLanguage;
+              })();
+            `
+          }}
+        />
       </head>
       <body>
-        <SiteHeader />
-        {children}
+        <I18nProvider>
+          <SiteHeader />
+          {children}
+        </I18nProvider>
       </body>
     </html>
   );
