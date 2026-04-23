@@ -1,5 +1,6 @@
 interface MenuItemProps {
   name: string;
+  translatedName?: string;
   price: number;
   description?: string;
 }
@@ -8,13 +9,18 @@ function formatPrice(price: number): string {
   return `€${price.toFixed(2)}`;
 }
 
-export function MenuItem({ name, price, description }: MenuItemProps) {
+export function MenuItem({ name, translatedName, price, description }: MenuItemProps) {
   return (
     <article className="menu-card group flex items-start justify-between gap-4 p-5">
       <div className="min-w-0 flex-1">
         <h3 className="text-[15px] font-semibold leading-snug text-zinc-900 dark:text-zinc-100">
           {name}
         </h3>
+        {translatedName ? (
+          <p className="mt-0.5 text-xs italic leading-relaxed text-zinc-500 dark:text-zinc-400">
+            {translatedName}
+          </p>
+        ) : null}
         {description ? (
           <p className="mt-1 text-sm leading-relaxed text-zinc-500 dark:text-zinc-400">
             {description}

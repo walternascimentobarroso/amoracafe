@@ -1,8 +1,10 @@
 import menuData from "@/data/menu.json";
 import type { Language } from "@/lib/i18n";
+import { menuItemTranslations } from "@/lib/menuItemTranslations";
 
 export interface MenuItemData {
   name: string;
+  translatedName?: string;
   price: number;
   description?: string;
 }
@@ -104,7 +106,10 @@ export function getMenuCategories(language: Language): MenuCategory[] {
       name: catalog.label[language],
       description: catalog.description[language],
       emoji: catalog.emoji,
-      items: category.items
+      items: category.items.map((item) => ({
+        ...item,
+        translatedName: menuItemTranslations[item.name]
+      }))
     };
   });
 }

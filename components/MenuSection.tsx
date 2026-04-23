@@ -2,6 +2,7 @@ import { MenuItem } from "@/components/MenuItem";
 
 interface MenuCategoryItem {
   name: string;
+  translatedName?: string;
   price: number;
   description?: string;
 }
@@ -41,6 +42,7 @@ export function MenuSection({ id, emoji, name, description, items }: MenuSection
           <MenuItem
             key={`${name}-${item.name}`}
             name={item.name}
+            translatedName={item.translatedName}
             price={item.price}
             description={item.description}
           />
